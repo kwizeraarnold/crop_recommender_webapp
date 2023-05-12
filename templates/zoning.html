@@ -1,0 +1,115 @@
+{% extends 'layouts/recommend-base.html' %}
+{% set active_page = activeTab %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block page_content %}
+<div class="container">
+    <div class="row d-flex justify-content-center mt-2 p-2 py-2">
+        <h2 class="text-center p-3">Crop Zoning</h2>
+        <div class="col-5 mt-2 p-3">
+            <p class="text-center px-2 py-3 wrap note">
+                Select a crop to view the regions it is most cultivated in, measured in tonnes per hectare. </p>
+            <div class="row d-flex justify-content-center mt-2 p-2 py-2">
+                <ul class="nav nav-pills mb-3 col-5" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active border" id="pills-home-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                            aria-selected="true">Region</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link border" id="pills-profile-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                            aria-selected="false">Crop</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                        aria-labelledby="pills-home-tab">
+                        <form method="post" action="{{ url_for('crop_zone_details') }}" class="row border form-row mb-2 mt-1" id="regionZone">
+                            <div class="form-group justify-content-center row p-3">
+                                <div class="col-sm-8">
+                                    <label for="regionSelect"
+                                        class="col-sm-12 col-form-label text-left fs-6 fw-bold">Region</label>
+                                    <select type="text" class="form-control col-sm-12" name="regionSelect" id="regionSelect">
+                                        <option value="">-- Select Region --</option>
+                                        {% for key, value in regions.items() %}
+                                            <option value="{{ key }}">{{ value }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group justify-content-center row p-3">
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary">Show Crops</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <form method="post" action="{{ url_for('crop_zone_details') }}" class="row border form-row mb-2 mt-1" id="cropZone">
+                            <div class="form-group justify-content-center row p-3">
+                                <div class="col-sm-8">
+                                    <label for="cropSelect"
+                                        class="col-sm-12 col-form-label text-left fs-6 fw-bold">Crop</label>
+                                    <select type="text" class="form-control col-sm-12" name="cropSelect" id="cropSelect">
+                                        <option value="">-- Select Crop --</option>
+                                        {% for key, value in crops.items() %}
+                                            <option value="{{ key }}">{{ value.capitalize() }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group justify-content-center row p-3">
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary">Show Regions</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'components/validate-script.html' %}
+
+<script>
+    $(document).ready(() => {
+        $("#regionZone").validate({
+            rules: {
+                regionSelect: {
+                    required: true,
+                },
+            },
+            messages: {
+                regionSelect: {
+                    required: "Please select a region from the list",
+                }
+            }
+        });
+        
+        $("#cropZone").validate({
+            rules: {
+                cropSelect: {
+                    required: true,
+                },
+            },
+            messages: {
+                cropSelect: {
+                    required: "Please select a crop from the list",
+                }
+            }
+        });
+
+        $(".nav-item > button.nav-link").click((e) => {
+            $(".nav-item > button.nav-link").not('.active').css("backgroundColor: white")
+            if (e.currentTarget.innerText == "Crop"){
+                $("p.note").html("Select a district to view the crops that ideal to cultivate there measured in by the yield in tonnes per hectare")
+            }else{
+                $("p.note").html("Select a crop to view the regions it is most cultivated in, measured in tonnes per hectare.")
+            }
+        })
+    })
+</script>
+{% endblock %}

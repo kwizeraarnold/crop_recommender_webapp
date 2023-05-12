@@ -1,0 +1,77 @@
+{% extends 'layouts/recommend-base.html' %}
+
+{% set active_page = activeTab %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block page_content %}
+<div class="container">
+    <div class="row d-flex justify-content-center mt-2 p-2 py-2">
+        <h2 class="text-center p-3">Crop Zoning</h2>
+        {% if zone_result|length >= 1 and not zone_result['db_error'] %}
+            <div class="col-8 mt-2 justify-content-center card-center row p-3">
+                <p class="text-center text-white bg-success p-2 wrap">
+                    {{ name }} {{ zone_for }}
+                </p>
+            </div>
+
+            {% if zone_for == 'Crops' %}
+            <div class="text-center">
+                <a href="/show-districts/{{ zone_result[0]['region'] }}" class="btn btn-secondary">Show Region Districts</a>
+            </div>
+            {% endif %}
+        {% endif %}
+    </div>
+    <div class="row d-flex justify-content-center mt-2 p-2 py-2">
+        <div class="col-8 border p-4 bg-white">
+            {% if zone_result['db_error'] %}
+                {% include "components/db-error.html" %}
+            {% elif zone_result|length < 1 %}
+                <p>Sorry, there are no varieties for your selection.</p>
+            {% else %}
+                <div class="row">
+                    {% if zone_for == 'Regions' %}
+                        <div class="w-100 text-white text-center p-2 mb-2" style="background-color: rgb(84 144 233);">Click a region to view its districts</div>
+                    {% endif %}
+                    <table class="table p-4 table-bordered" id="data-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">{{ zone_for }}</th>
+                                <th scope="col">Yeild (H/Ta)</th>
+                                <th scope="col">Crop Extras</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in zone_result %}
+                                <tr>
+                                    {% if zone_for == 'Crops' %}
+                                        <td>{{ row['crop_name'].capitalize() }}</td>
+                                    {% elif zone_for == 'Regions' %}
+                                        <td><a href="/show-districts/{{ row['region'] }}">{{ row['region_name'] }}</a></td>
+                                    {% endif %}
+                                    <td>{{ row['yield'] }}</td>
+                                    {% if row['crop_extras'] %}
+                                        <td>{{ row['crop_extras'] }}</td>
+                                    {% else %}
+                                        <td>-</td>
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+                            
+                        </tbody>
+                    </table>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='js/datatables.js') }}"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#data-table').dataTable( {
+            'bSort': false,
+        } );
+    } );
+</script>
+{% endblock %}

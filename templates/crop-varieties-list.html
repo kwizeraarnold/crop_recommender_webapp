@@ -1,0 +1,51 @@
+{% extends 'layouts/recommend-base.html' %}
+
+{% set active_page = activeTab %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block page_content %}
+<div class="container">
+    <div class="row d-flex justify-content-center mt-2 p-2 py-2">
+        <h2 class="text-center p-3">Crop Variety Recommendation</h2>
+        {% if varieties|length >= 1 and not varieties['db_error'] %}
+            <div class="col-5 mt-2 justify-content-center card-center row p-3">
+                <p class="text-center text-white bg-success p-2 wrap">
+                    {{ cropName }} Varieties
+                </p>
+            </div>
+        {% endif %}
+    </div>
+    <div class="row d-flex justify-content-center mt-2 p-2 py-2">
+        <div class="col-8 border p-4 bg-white">
+            {% if varieties['db_error'] %}
+                {% include "components/db-error.html" %}
+            {% elif varieties|length < 1 %}
+                <p>Sorry, there are no varieties for your selection.</p>
+            {% else %}
+                <table class="table p-4 table-bordered" id="data-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Variety Name</th>
+                            <th scope="col">Days to mature</th>
+                            <th scope="col">Yield (T/Ha)</th>
+                            <th scope="col">Special Attributes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for variety in varieties %}
+                            <tr>
+                                <td>{{ variety['variety_name'] }}</td>
+                                <td>{{ variety['maturity_duration'] }}</td>
+                                <td>{{ variety['yield'] }}</td>
+                                <td>{{ variety['special_attributes'] }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% include 'components/datatables-script.html' %}
+{% endblock %}

@@ -1,0 +1,9 @@
+{% block dscripts %}
+<script src="{{ url_for('static', filename='js/datatables.js') }}"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#data-table').DataTable();
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'layouts/recommend-base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block page_content %}
+<div class="container">
+    <div class="row d-flex justify-content-center mt-2 p-2 py-2">
+        {% if districts|length >= 1 and not districts['db_error'] %}
+            <div class="col-8 mt-2 justify-content-center card-center row p-3">
+                <h4 class="text-center text-white bg-success p-2 wrap">
+                    {{ regionName }} Districts
+                </h4>
+            </div>
+        {% endif %}
+    </div>
+    
+    <div class="row d-flex justify-content-center mt-2 p-2 py-2">
+        <div class="col-8 border p-4 bg-white">
+            {% if districts['db_error'] %}
+                {% include "components/db-error.html" %}
+            {% elif districts|length < 1 %}
+                <p>Sorry, there are no districts for your selection.</p>
+            {% else %}
+                <table class="table p-4 table-bordered" id="data-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">District</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for district in districts %}
+                            <tr>
+                                <td>{{ district['district_name'] }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% include 'components/datatables-script.html' %}
+{% endblock %}

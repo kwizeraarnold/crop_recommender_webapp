@@ -1,0 +1,578 @@
+[
+    {
+      "id": 235574,
+      "name": "Abim"
+    },
+    {
+      "id": 443782,
+      "name": "Adjumani District"
+    },
+    {
+      "id": 235483,
+      "name": "Adok"
+    },
+    {
+      "id": 235293,
+      "name": "Alebtong"
+    },
+    {
+      "id": 235203,
+      "name": "Amolatar"
+    },
+    {
+      "id": 235191,
+      "name": "Amudat"
+    },
+    {
+      "id": 235186,
+      "name": "Amuria"
+    },
+    {
+      "id": 8015635,
+      "name": "Amuru"
+    },
+    {
+      "id": 235130,
+      "name": "Apac"
+    },
+    {
+      "id": 443328,
+      "name": "Arua District"
+    },
+    {
+      "id": 234882,
+      "name": "Balabala"
+    },
+    {
+      "id": 234769,
+      "name": "Binyin"
+    },
+    {
+      "id": 234658,
+      "name": "Budaka"
+    },
+    {
+      "id": 234637,
+      "name": "Bududa"
+    },
+    {
+      "id": 234578,
+      "name": "Bugembe"
+    },
+    {
+      "id": 443783,
+      "name": "Bugiri District"
+    },
+    {
+      "id": 8030577,
+      "name": "Buikwe District"
+    },
+    {
+      "id": 234412,
+      "name": "Bukedea"
+    },
+    {
+      "id": 234396,
+      "name": "Bukiberu"
+    },
+    {
+      "id": 234371,
+      "name": "Bukomansimbi"
+    },
+    {
+      "id": 234328,
+      "name": "Bukwa"
+    },
+    {
+      "id": 234306,
+      "name": "Bulambuli"
+    },
+    {
+      "id": 234259,
+      "name": "Bulisa"
+    },
+    {
+      "id": 443329,
+      "name": "Bundibugyo District"
+    },
+    {
+      "id": 8197383,
+      "name": "Bungatira"
+    },
+    {
+      "id": 234092,
+      "name": "Busembatia"
+    },
+    {
+      "id": 234081,
+      "name": "Bushenyi"
+    },
+    {
+      "id": 443784,
+      "name": "Busia District"
+    },
+    {
+      "id": 234004,
+      "name": "Butaleja"
+    },
+    {
+      "id": 233886,
+      "name": "Buwenge"
+    },
+    {
+      "id": 233840,
+      "name": "Buyende"
+    },
+    {
+      "id": 233738,
+      "name": "Bweyogerere"
+    },
+    {
+      "id": 233730,
+      "name": "Bwizibwera"
+    },
+    {
+      "id": 233725,
+      "name": "Byakabanda"
+    },
+    {
+      "id": 233563,
+      "name": "Dokolo"
+    },
+    {
+      "id": 233508,
+      "name": "Entebbe"
+    },
+    {
+      "id": 233476,
+      "name": "Fort Portal"
+    },
+    {
+      "id": 233382,
+      "name": "Gombe"
+    },
+    {
+      "id": 443331,
+      "name": "Gulu District"
+    },
+    {
+      "id": 443332,
+      "name": "Hoima District"
+    },
+    {
+      "id": 443334,
+      "name": "Iganga District"
+    },
+    {
+      "id": 7911405,
+      "name": "Isingiro"
+    },
+    {
+      "id": 443335,
+      "name": "Jinja District"
+    },
+    {
+      "id": 233093,
+      "name": "Kaabong"
+    },
+    {
+      "id": 443336,
+      "name": "Kabale District"
+    },
+    {
+      "id": 443337,
+      "name": "Kabarole District"
+    },
+    {
+      "id": 233019,
+      "name": "Kaberamaido"
+    },
+    {
+      "id": 232834,
+      "name": "Kagadi"
+    },
+    {
+      "id": 232713,
+      "name": "Kajansi"
+    },
+    {
+      "id": 232571,
+      "name": "Kalangala"
+    },
+    {
+      "id": 232526,
+      "name": "Kaliro"
+    },
+    {
+      "id": 232490,
+      "name": "Kalungu"
+    },
+    {
+      "id": 443339,
+      "name": "Kampala District"
+    },
+    {
+      "id": 232397,
+      "name": "Kamuli"
+    },
+    {
+      "id": 448216,
+      "name": "Kamwenge District"
+    },
+    {
+      "id": 232307,
+      "name": "Kanoni"
+    },
+    {
+      "id": 448217,
+      "name": "Kanungu District"
+    },
+    {
+      "id": 232235,
+      "name": "Kapchorwa"
+    },
+    {
+      "id": 443342,
+      "name": "Kasese District"
+    },
+    {
+      "id": 231947,
+      "name": "Katakwi"
+    },
+    {
+      "id": 448218,
+      "name": "Kayunga District"
+    },
+    {
+      "id": 231617,
+      "name": "Kibale"
+    },
+    {
+      "id": 231554,
+      "name": "Kibingo"
+    },
+    {
+      "id": 231550,
+      "name": "Kiboga"
+    },
+    {
+      "id": 231532,
+      "name": "Kibuku"
+    },
+    {
+      "id": 231426,
+      "name": "Kigorobya"
+    },
+    {
+      "id": 231250,
+      "name": "Kilembe"
+    },
+    {
+      "id": 231163,
+      "name": "Kiraboha"
+    },
+    {
+      "id": 231139,
+      "name": "Kireka"
+    },
+    {
+      "id": 231083,
+      "name": "Kiryandongo"
+    },
+    {
+      "id": 230993,
+      "name": "Kisoro"
+    },
+    {
+      "id": 8051533,
+      "name": "Kitamilo"
+    },
+    {
+      "id": 443346,
+      "name": "Kitgum District"
+    },
+    {
+      "id": 230725,
+      "name": "Koboko"
+    },
+    {
+      "id": 8051535,
+      "name": "Kole"
+    },
+    {
+      "id": 443347,
+      "name": "Kotido District"
+    },
+    {
+      "id": 230584,
+      "name": "Kumi"
+    },
+    {
+      "id": 8051534,
+      "name": "Kyankwanzi"
+    },
+    {
+      "id": 230331,
+      "name": "Kyegegwa"
+    },
+    {
+      "id": 448219,
+      "name": "Kyenjojo District"
+    },
+    {
+      "id": 230256,
+      "name": "Kyotera"
+    },
+    {
+      "id": 443349,
+      "name": "Lira District"
+    },
+    {
+      "id": 230088,
+      "name": "Lokiporangatome"
+    },
+    {
+      "id": 229911,
+      "name": "Lugazi"
+    },
+    {
+      "id": 8051538,
+      "name": "Luuka Town"
+    },
+    {
+      "id": 443350,
+      "name": "Luwero District"
+    },
+    {
+      "id": 229630,
+      "name": "Lwengo"
+    },
+    {
+      "id": 229599,
+      "name": "Lyantonde"
+    },
+    {
+      "id": 7911406,
+      "name": "Manafwa"
+    },
+    {
+      "id": 229397,
+      "name": "Maracha"
+    },
+    {
+      "id": 448232,
+      "name": "Margherita"
+    },
+    {
+      "id": 229380,
+      "name": "Masaka"
+    },
+    {
+      "id": 443351,
+      "name": "Masindi District"
+    },
+    {
+      "id": 229361,
+      "name": "Masindi Port"
+    },
+    {
+      "id": 229292,
+      "name": "Mayuge"
+    },
+    {
+      "id": 443353,
+      "name": "Mbale District"
+    },
+    {
+      "id": 443355,
+      "name": "Mbarara District"
+    },
+    {
+      "id": 229144,
+      "name": "Mitoma"
+    },
+    {
+      "id": 7056293,
+      "name": "Mityana District"
+    },
+    {
+      "id": 443356,
+      "name": "Moroto District"
+    },
+    {
+      "id": 443357,
+      "name": "Moyo District"
+    },
+    {
+      "id": 233709,
+      "name": "Mpigi District"
+    },
+    {
+      "id": 443358,
+      "name": "Mubende District"
+    },
+    {
+      "id": 228894,
+      "name": "Muhororo"
+    },
+    {
+      "id": 443359,
+      "name": "Mukono District"
+    },
+    {
+      "id": 228512,
+      "name": "Nadiket"
+    },
+    {
+      "id": 448226,
+      "name": "Nakapiripirit"
+    },
+    {
+      "id": 7056294,
+      "name": "Nakaseke District"
+    },
+    {
+      "id": 228418,
+      "name": "Nakasongola"
+    },
+    {
+      "id": 228227,
+      "name": "Namasuba"
+    },
+    {
+      "id": 8051532,
+      "name": "Namayingo"
+    },
+    {
+      "id": 228177,
+      "name": "Namirembe"
+    },
+    {
+      "id": 228094,
+      "name": "Namutumba"
+    },
+    {
+      "id": 8051537,
+      "name": "Napak"
+    },
+    {
+      "id": 443360,
+      "name": "Nebbi District"
+    },
+    {
+      "id": 227843,
+      "name": "Ngora"
+    },
+    {
+      "id": 227812,
+      "name": "Njeru"
+    },
+    {
+      "id": 227605,
+      "name": "Ntoroko"
+    },
+    {
+      "id": 443361,
+      "name": "Ntungamo District"
+    },
+    {
+      "id": 448243,
+      "name": "Nwoya"
+    },
+    {
+      "id": 227442,
+      "name": "Nyalubanga"
+    },
+    {
+      "id": 227439,
+      "name": "Nyalutembe"
+    },
+    {
+      "id": 226975,
+      "name": "Opiyai"
+    },
+    {
+      "id": 8051536,
+      "name": "Otuke"
+    },
+    {
+      "id": 7911407,
+      "name": "Oyam"
+    },
+    {
+      "id": 448227,
+      "name": "Pader"
+    },
+    {
+      "id": 226866,
+      "name": "Pader Palwo"
+    },
+    {
+      "id": 226853,
+      "name": "Paidha"
+    },
+    {
+      "id": 8079569,
+      "name": "Palingi"
+    },
+    {
+      "id": 443362,
+      "name": "Pallisa District"
+    },
+    {
+      "id": 448245,
+      "name": "Paraka"
+    },
+    {
+      "id": 226727,
+      "name": "Rakai"
+    },
+    {
+      "id": 226676,
+      "name": "Rubirizi"
+    },
+    {
+      "id": 226608,
+      "name": "Rukoki"
+    },
+    {
+      "id": 226600,
+      "name": "Rukungiri"
+    },
+    {
+      "id": 226361,
+      "name": "Sembabule"
+    },
+    {
+      "id": 226330,
+      "name": "Serere"
+    },
+    {
+      "id": 226267,
+      "name": "Sironko"
+    },
+    {
+      "id": 443365,
+      "name": "Soroti District"
+    },
+    {
+      "id": 443366,
+      "name": "Tororo District"
+    },
+    {
+      "id": 448224,
+      "name": "Wakiso District"
+    },
+    {
+      "id": 225858,
+      "name": "Wobulenzi"
+    },
+    {
+      "id": 448225,
+      "name": "Yumbe District"
+    },
+    {
+      "id": 8030563,
+      "name": "Zombo District"
+    }
+  ]

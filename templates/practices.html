@@ -1,0 +1,21 @@
+{% extends 'layouts/recommend-base.html' %}
+
+{% set active_page = activeTab %}
+
+
+{% block title %}{{ title }}{% endblock %}
+{% set location = 'practices' %}
+
+{% block page_content %}
+<div class="container">
+    <div class="row d-flex justify-content-center mt-2 p-2 py-2">
+        <h2 class="text-center p-3">Ideal Cultivation Practices</h2>
+        <div class="col-7 mt-2 p-3">
+            <p class="text-center px-2 py-3 wrap note">
+                This will provide a list of ideal cultivation practices at the different stages for the select crop.
+            </p>
+        </div>
+        {% include 'components/crop-list.html' %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% block crop_list %}
+    <div class="row pl-3 pt-4 justify-content-center">
+
+        {% if crops["db_error"] %}
+            {% include "components/db-error.html" %}
+        {% elif crops|length < 1 %}
+            <div class="col-md-7">
+                <p class="text-center p-3 border bg-white">No crops found</p>
+            </div>
+        {% else %}
+            {% for crop in crops %}
+            {% set image_path = 'images/'+crop['image'] %}
+            <div class="col-3 mb-4">
+                <div class="card shadow-sm bg-white" style="border-radius: 10%">
+                    <img src="{{ url_for('static', filename=image_path) }}" height="200px" class="card-img-top"
+                        style="border-radius: 10% 10% 0 0" alt="{{ crop['crop_name'] }} image">
+                    <div class="card-body text-center">
+                        <a href="{{ location }}/{{ crop['id'] }}" class="nav-link text-primary text-bold">{{ crop['crop_name'].capitalize() }} &nbsp;<span
+                                class="fw-900 f-5">&#x3e;</span></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}

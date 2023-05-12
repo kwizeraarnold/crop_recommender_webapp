@@ -1,0 +1,27 @@
+/* simple css to match the outcomes */
+
+@font-face {
+  font-family: Poppins;
+  src: url('../fonts/Poppins-Regular.ttf');
+}
+
+/* body definition  */
+
+body,html {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  line-height: normal;
+}
+
+body{
+  background: #f8f9fa;
+}
+.border.form-row{
+  background: white;
+}
+.note{
+  background: #ededee;
+}
+.error{
+  color: #EB3941;
+}

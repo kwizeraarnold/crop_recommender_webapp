@@ -1,0 +1,18 @@
+<script>
+    document.querySelector("body").setAttribute("class", "modal-open");
+    $(window).on('load', function () {
+        $("body").removeClass("modal-open");
+        $("#spinOverlay").toggleClass("show");
+        $("#spinOverlay").hide();
+    });
+</script>
+
+{% set waitText, waitTextClass, spinnerClass = "Please Wait", "m-0 mb-2 text-dark", "spinner-border text-primary" %}
+<div class="modal fade show" id = "spinOverlay" tabindex="-1" role="dialog" style="display: block;background-color: rgba(0, 0, 0, 0.6);" aria-modal="true">
+    <div class="h-100 d-flex">
+        <div class="bg-white border rounded px-5 py-2 text-center w-auto m-auto spinner">
+            <h6 class="{{ waitTextClass }}">{{ waitText }}</h6>
+            <div class="{{ spinnerClass }}"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,111 @@
+{% extends 'layouts/recommend-base.html' %}
+{% set active_page = activeTab %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block page_content %}
+<div class="container">
+    <div class="row m-0 d-flex justify-content-center mt-2 p-2 py-2">
+        <h2 class="text-center p-3">NPK Ratio Recommendation</h2>
+        <div class="col-5 mt-2 p-3">
+            {% if crop_name %}
+                <p class="text-center text-white bg-success p-2 wrap">
+                    Recommended NPK ratio and pH for <b>{{ crop_name.capitalize() }}</b> is:
+                </p>
+
+                <div class="border mb-4 bg-white">
+                    <div class="row m-0 justify-content-center p-3">
+                        <label for="nitrogen" class="col-md-5 col-form-label fs-6 fw-bold my-auto">Nitrogen</label>
+                        <div class="col-md-4 border my-auto p-3 text-center" id="nitrogen">
+                            {{ N }}
+                        </div>
+                    </div>
+                    <div class="row m-0 justify-content-center p-3">
+                        <label for="phosphorus" class="col-md-5 col-form-label fs-6 fw-bold my-auto">Phosphorus</label>
+                        <div class="col-md-4 border my-auto p-3 text-center" id="phosphorus">
+                            {{ P }}
+                        </div>
+                    </div>
+                    <div class="row m-0 justify-content-center p-3">
+                        <label for="potassium" class="col-md-5 col-form-label fs-6 fw-bold my-auto">Potassium</label>
+                        <div class="col-md-4 border my-auto p-3 text-center" id="potassium">
+                            {{ K }}
+                        </div>
+                    </div>
+                    <div class="row m-0 justify-content-center p-3">
+                        <label for="ph" class="col-md-5 col-form-label fs-6 fw-bold my-auto">pH</label>
+                        <div class="col-md-4 border my-auto p-3 text-center" id="ph">
+                            {{ pH }}
+                        </div>
+                    </div>
+                </div>
+            {% elif error %}
+                <p class="text-center bg-danger text-white p-2 wrap">
+                    {{ error }}
+                </p>
+            {% else %}
+                <p class="text-center px-2 py-3 wrap note">
+                    This will recommend a suitable NPK ratio and pH your soil should have so as to cultivated the desired
+                    crop 
+                </p>
+            {% endif %}
+
+            <form method="post" action="{{ url_for('npk_predict') }}" class="row m-0 border form-row m-0 mb-2 mt-1" id="npkRecommend">
+                {% if crop_name %}
+                    <h4 class="text-center pt-4 pb-1">You submitted</h4>
+                    <hr style="width: 100px;margin: auto;">
+                {% endif %}
+                <div class="form-group justify-content-center row m-0 p-3">
+                    <div class="col-md-8">
+                        <label for="select" class="col-md-12 col-form-label text-left fs-6 fw-bold my-auto">Crop</label>
+                        <select type="text" class="form-control col-md-12" id="cropname" name="cropname">
+                            <option value="">-- Select Crop --</option>
+                            <option value="apple" {{ 'selected' if crop_name=='apple' else '' }}>Apple</option>
+                            <option value="banana" {{ 'selected' if crop_name=='banana' else '' }}>Banana</option>
+                            <option value="coconut" {{ 'selected' if crop_name=='coconut' else '' }}>Coconut</option>
+                            <option value="coffee" {{ 'selected' if crop_name=='coffee' else '' }}>Coffee</option>
+                            <option value="cotton" {{ 'selected' if crop_name=='cotton' else '' }}>Cotton</option>
+                            <option value="grapes" {{ 'selected' if crop_name=='grapes' else '' }}>Grapes</option>
+                            <option value="kidneybeans" {{ 'selected' if crop_name=='kidneybeans' else '' }}>Kidney Beans</option>
+                            <option value="maize" {{ 'selected' if crop_name=='maize' else '' }}>Maize</option>
+                            <option value="mungbean" {{ 'selected' if crop_name=='mungbean' else '' }}>Green Mung Bean</option>
+                            <option value="orange" {{ 'selected' if crop_name=='orange' else '' }}>Orange</option>
+                            <option value="pigeonpeas" {{ 'selected' if crop_name=='pigeonpeas' else '' }}>Peas</option>
+                            <option value="rice" {{ 'selected' if crop_name=='rice' else '' }}>Rice</option>
+                            <option value="watermelon" {{ 'selected' if crop_name=='watermelon' else '' }}>Watermelon</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group justify-content-center row m-0 p-3">
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">{{ "Resubmit" if crop_name else "Get NPK Ratio" }}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% include 'components/validate-script.html' %}
+
+<script>
+    $(document).ready(() => {
+        // Add method for float points
+        $.validator.addMethod( "floatPoint", function( value, element ) {
+            return this.optional( element ) || /[+-]?((\d+\.?\d*)|(\.\d+))/i.test( value );
+        }, "Please enter a number between 0 - 14" );
+
+        $("#npkRecommend").validate({
+            rules: {
+                cropname: {
+                    required: true,
+                }
+            },
+            messages: {
+                district: {
+                    cropname: "Please select a crop from the list",
+                }
+            }
+        });
+    })
+</script>
+{% endblock %}
