@@ -41,7 +41,7 @@ def weather_fetch(city_name):
     :params: city_name
     :return: temperature, humidity
     """
-    api_key = os.environ.get('weather_api_key')
+    api_key = os.getenv('weather_api_key')
     total_temperature = 0
     total_humidity = 0
     average_temperature = 0
