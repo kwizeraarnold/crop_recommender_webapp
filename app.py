@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request, redirect
 from flask_cors import CORS
 from flask_mysqldb import MySQL
@@ -40,7 +41,7 @@ def weather_fetch(city_name):
     :params: city_name
     :return: temperature, humidity
     """
-    api_key = "abfb8146fd98ef50e173ea3093df08d5"
+    api_key = os.environ.get('weather_api_key')
     total_temperature = 0
     total_humidity = 0
     average_temperature = 0
@@ -79,8 +80,8 @@ app.config.from_object(__name__)
 
 # Db Config
 app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'nicholas'
-app.config['MYSQL_PASSWORD'] = 'Dicky1000@'
+app.config['MYSQL_USER'] = os.environ.get('DATABASE_USER')
+app.config['MYSQL_PASSWORD'] = os.environ.get('DATABASE_PASSWORD')
 app.config['MYSQL_DB'] = 'idealcrop'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
